@@ -1,0 +1,28 @@
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+    String str="" ;
+     if (!(str1 + str2).equals(str2 + str1))
+            return "";
+   
+    int l1=str1.length();
+    int l2=str2.length();
+    if(l1 % l2 == 0)
+     return str2 ;
+    int hcf=1 ;
+   
+    int min=Math.min(l1,l2) ;
+   
+    for(int i=1 ; i<=min;i++){
+        if(l2%i==0 && l1%i==0)
+        hcf=i ;
+    }
+    int j=0 ;
+    while(j<hcf){
+        str+=str2.charAt(j);
+        j++;
+    }
+
+return str ;
+
+}
+} 
